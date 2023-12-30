@@ -1,0 +1,265 @@
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top: 0%;
+    z-index: 2;
+    background-color: white;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+#home{
+    display: none;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+.nav-list > span,img{
+    margin-inline: 20px;
+    color: darkblue;
+}
+.hero{
+    width:100%;
+    position: relative;
+    padding: 20px 50px;
+}
+.hero > img{
+    width: 96%;
+}
+.hero-para{
+    position: absolute;
+    top: 120px;
+    left: 140px;
+    color: white;
+}
+.hero-para h3{
+    color: orange;
+}
+.hero-para h1{
+    line-height: 30px;
+    margin: 20px 0px;
+}
+.hero-search{
+    padding: 50px;
+}
+.hero-search input{
+    width: 100%;
+    border: none;
+    background-color: lightgrey;
+    height: 30px;
+    padding: 10px 30px;
+    margin: 40px 0px;
+    border-radius: 10px;
+}
+.hero-btns > button{
+    border: none;
+    padding: 20px 50px;
+    margin-inline: 10px;
+    border-radius: 10px;
+}
+.container{
+    display: flex;
+}
+.content {
+    flex: 1.5;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 30px;
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rating {
+    margin-top: 15px;
+
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed for spacing between label and checkbox */
+  }
+  
+  input[type="checkbox"] {
+    vertical-align: middle; /* Align checkbox with the middle of the label */
+  }
+.images{
+    flex: 10;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width:430px;
+  }
+  
+  .menu-container div {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 370px;
+    margin: 10px;
+  }
+  .menu-container > div img{
+    height: 220px;
+    width: 90%;
+    border-radius: 10px;
+  }
+.menu-container > div >div{
+    width:100%;
+}
+.menu-details{
+    display: flex;
+}
+
+.fa-heart.liked {
+    color: red;
+}
+
+footer{
+    padding: 100px 100px 50px 100px;
+}
+.foot{
+    display: flex;
+    gap: 10rem;
+    padding: 0;
+    margin: 0;
+}
+.foot ul li{
+    list-style: none;
+    line-height: 40px;
+}
+.foot ul li:first-child{
+    color: navy;
+    font-weight: 500;
+}
+.icons{
+    text-align: center;
+    padding-top: 50px;
+}
+.icons > i{
+    padding-inline: 10px;
+    font-size: 30px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+    *{
+        width: 100%;
+    }
+    nav img{
+        width: 100px;
+    }
+    #home{
+        display: block;
+    }
+   
+
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: white;
+        width: 40%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        height: 100vh;
+    }
+    .nav-list span, .nav-list img {
+        display: block;
+        margin: 10px;
+    }
+    .hero{
+        width: 100%;
+        padding: 10px;
+    }
+    .hero > img{
+        height: 280px;
+        width: 100%;
+        padding: 10px;
+        margin: 0px;
+    }
+    .hero-search{
+        width: 95%;
+        margin: 10px;
+        padding: 20px 0px;
+    }
+    .hero-para{
+        top: 40px;
+        left: 40px;
+        width: fit-content;
+    }
+    .hero-btns{
+        display: flex;
+        overflow-x: scroll;
+    }
+    .hero-btns::-webkit-scrollbar{
+        display: none;
+    }
+    .hero-btns button{
+        padding: 5px 50px;
+    }
+    .menu-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        width:430px;
+      }
+      .menu-container div {
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 450px;
+        margin: 10px;
+      }
+      .menu-container > div img{
+        height: 220px;
+        width: 90%;
+        border-radius: 10px;
+      }
+    .menu-container > div >div{
+        width:100%;
+    }
+      
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+      }
+    
+      .content {
+        flex: 1; /* Takes full width on mobile */
+      }
+    
+      .images {
+        flex: 1; /* Takes full width on mobile */
+      }
+
+      .foot ul,.contact,.icons{
+        display: none;
+      }
+      .foot{
+        display: flex;
+        flex-direction: column;
+      }
+}
