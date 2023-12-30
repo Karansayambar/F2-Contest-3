@@ -122,7 +122,6 @@ let dishes = [
 ]
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const menuContainer = document.querySelector('.menu-container');
     const rate1Checkbox = document.getElementById('rate1');
@@ -144,16 +143,30 @@ document.addEventListener("DOMContentLoaded", function () {
                         </span>
                         <span>
                             <h3>${dish.time}</h3>
-                            <i class="far fa-heart"></i>
+                            <i class="far fa-heart ${dish.isLiked ? 'liked' : ''}" data-dish="${dish.name}"></i>
                             <i class="far fa-comment"></i>
                         </span>
                     </div>
                 `;
 
                 menuContainer.appendChild(menuItem);
-                
+
+                const heartIcon = menuItem.querySelector('.fa-heart');
+                heartIcon.addEventListener('click', function () {
+                    toggleLike(dish.name);
+                });
             }
         });
+    }
+
+    function toggleLike(dishName) {
+        const dish = dishes.find(item => item.name === dishName);
+        if (dish) {
+            dish.isLiked = !dish.isLiked;
+
+            const heartIcon = document.querySelector(`.fa-heart[data-dish="${dish.name}"]`);
+            heartIcon.classList.toggle('liked', dish.isLiked);
+        }
     }
 
     function showRecipesByRating() {
@@ -164,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     showRecipes();
 
-    // Event listener for rating checkboxes
     rate1Checkbox.addEventListener('change', showRecipesByRating);
     rate2Checkbox.addEventListener('change', showRecipesByRating);
 
@@ -190,9 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     homeIcon.addEventListener('click', function () {
         navList.style.display = (navList.style.display === 'none' || navList.style.display === '') ? 'block' : 'none';
-        navList.style.display.flexDirection = "column";
-
+        navList.style.flexDirection = "column";
     });
-
 });
-
