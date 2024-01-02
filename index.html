@@ -28,22 +28,29 @@
             <div class="hero-para">
                 <h3>Trending now</h3>
                 <h1>Mike’s famous salad <br> with cheese</h1>
-                <p>By John Mike</p>
+                <p style="color: aliceblue;">By John Mike</p>
             </div>
             <div class="hero-search">
                 <h2>Search For Recipes</h2>
-                <input type="search" id="searchInput" placeholder="Search...">
+                <div class="search">
+                    <input type="search" id="searchInput" placeholder="Search...">
+                    <button onclick="performSearch()">Search <i class="fa-solid fa-magnifying-glass-arrow-right"></i></button>
+                </div>
             </div>
             <div class="hero-btns">
-                <button id="allRecipesBtn" style="background-color: rgba(234, 170, 0, 1);">All Recipes <i
-                        class="fa-solid fa-chevron-right"></i></button>
-                <button id="vegRecipesBtn" style="background-color: rgba(196, 214, 0, 1);">Veg Recipes Only <i
-                        class="fa-solid fa-chevron-right"></i></button>
-                <button id="nonVegRecipesBtn" style="background-color: rgba(220, 88, 42, 1);"> Non Veg Recipes <i
-                        class="fa-solid fa-chevron-right"></i></button>
+                <div class="btns">
+                    <button id="allRecipesBtn" style="background-color: #CEDEBD;">All Recipes <i
+                            class="fa-solid fa-chevron-right"></i></button>
+                    <button id="vegRecipesBtn" style="background-color: #618264;">Veg Recipes Only <i
+                            class="fa-solid fa-chevron-right"></i></button>
+                    <button id="nonVegRecipesBtn" style="background-color: #9EB384;"> Non Veg Recipes <i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="offer">
+                    <marquee>"More Than Just a Delivery – It’s a Culinary Adventure in Every Box."</marquee>
+                </div>
             </div>
-                
-            </div>
+        </div>
         </div>
     </section>
     <section>
@@ -61,7 +68,19 @@
             </div>
             <div class="images">
                 <div class="menu-container">
-                    
+                    <!-- <img src="${dish.imageSrc}" alt="${dish.name}">
+                    <div>
+                        <p>${dish.type}</p>
+                        <span class="menu-details">
+                            <h3>${dish.name}</h3>
+                            <p>${dish.rating}</p>
+                        </span>
+                        <span>
+                            <h3>${dish.time}</h3>
+                            <i class="far fa-heart ${dish.isLiked ? 'liked' : ''}" data-dish="${dish.name}"></i>
+                            <i class="far fa-comment"></i>
+                        </span>
+                    </div> -->
                 </div>
             </div>
         </div>
